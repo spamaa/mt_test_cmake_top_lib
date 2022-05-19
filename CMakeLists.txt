@@ -1,6 +1,8 @@
-﻿# CMakeList.txt : CMake project for TestCMakeApp, include source and define
-# project specific logic here.
-#
+﻿############################################################################
+# $TOP$
+# This is top level cmake for test project
+############################################################################
+
 cmake_minimum_required (VERSION 3.15)
 
 project ("TestCMakeTopLib")
@@ -18,6 +20,10 @@ matterfi_check_vcpkg_modes()
 set (${PROJECT_NAME}_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 enable_testing()
+
+# gtest will be required for all tests
+find_package(GTest CONFIG REQUIRED)
+
 
 find_package(cmake-top-lib CONFIG REQUIRED)
 find_package(cmake-static-lib CONFIG REQUIRED)

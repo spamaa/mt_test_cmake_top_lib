@@ -24,11 +24,6 @@ enable_testing()
 # gtest will be required for all tests
 find_package(GTest CONFIG REQUIRED)
 
-
-find_package(cmake-top-lib CONFIG REQUIRED)
-find_package(cmake-static-lib CONFIG REQUIRED)
-find_package(fmt CONFIG REQUIRED)
-
 add_subdirectory(tests)
 
 # TODO: Add tests and install targets if needed.

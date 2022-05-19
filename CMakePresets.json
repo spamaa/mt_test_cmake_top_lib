@@ -42,15 +42,6 @@
                 "CMAKE_BUILD_TYPE": "Release"
             }
         },
-        {
-            "name": "common_ext",
-            "hidden": true,
-            "description": "common settings for using extended version of libraries",
-            "cacheVariables": {
-                "USE_EXTENDED_LIBS": "ON"
-            }
-        },
-
 
         {
             "name": "msvc_base",
@@ -115,22 +106,10 @@
             "inherits": [ "msvc_x64_static", "common_debug" ]
         },
         {
-            "name": "msvc_x64_static_debug_ext",
-            "displayName": "MSVC x64 static ext(debug)",
-            "description": "Use msvc compiler, architecture x64, static linking extended libraries, with debug symbols",
-            "inherits": [ "msvc_x64_static", "common_debug", "common_ext" ]
-        },
-        {
             "name": "msvc_x64_static_debug_asan",
             "displayName": "MSVC x64 static(debug with addr sanitizer)",
             "description": "Use msvc compiler, architecture x64, static linking, with debug symbols with address sanitizer",
             "inherits": [ "msvc_x64_static_asan", "common_debug" ]
-        },
-        {
-            "name": "msvc_x64_static_debug_ext_asan",
-            "displayName": "MSVC x64 static ext(debug with addr sanitizer)",
-            "description": "Use msvc compiler, architecture x64, static linking extended libraries, with debug symbols with address sanitizer",
-            "inherits": [ "msvc_x64_static_asan", "common_debug", "common_ext" ]
         },
         {
             "name": "msvc_x64_static_release",
@@ -159,19 +138,9 @@
             "configurePreset": "msvc_x64_static_debug"
         },
         {
-            "name": "msvc_x64_static_debug_ext",
-            "inherits": "common_buildPresets",
-            "configurePreset": "msvc_x64_static_debug_ext"
-        },
-        {
             "name": "msvc_x64_static_debug_asan",
             "inherits": "common_buildPresets",
             "configurePreset": "msvc_x64_static_debug_asan"
-        },
-        {
-            "name": "msvc_x64_static_debug_ext_asan",
-            "inherits": "common_buildPresets",
-            "configurePreset": "msvc_x64_static_debug_ext_asan"
         },
         {
             "name": "msvc_x64_static_release",

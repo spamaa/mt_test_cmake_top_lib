@@ -1,6 +1,6 @@
 ############################################################################
-# $tests/dummy/TopLib$
-# This target verifies if CMaakeTopLib is linked correctly
+# $tests/dummy/StaticTopLib$
+# This target verifies runs some test for the static-top-lib
 ############################################################################
 
 # find required deps
@@ -10,12 +10,15 @@ find_package(fmt CONFIG REQUIRED)
 
 # Version for standard cmake-top-lib library
 # set executable name
-set (TARGET_NAME TestCMakeTopLib)
+set (TARGET_NAME TestStaticTopLib)
 # set the main cpp file
 set (${TARGET_NAME}_main ${${PROJECT_NAME}_ROOT_DIR}/TestCMakeTopLib.cpp)
 
 # set sources. In this case we do not search recursively
-set (${TARGET_NAME}_cxx_sources Test_AboutTest.cpp Plain/Test_PlainSpecific.cpp)
+set (${TARGET_NAME}_cxx_sources 
+    Test_RunCommonFunctions.cpp
+    Test_RunPlainVerFunctions.cpp
+)
 
 # add test target
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${${TARGET_NAME}_cxx_sources})
@@ -26,14 +29,17 @@ target_link_libraries(${TARGET_NAME}
         CMakeTopLib::CMakeTopLib
 )
 
-
 # Version for extended cmake-top-lib library
+# set executable name
+set (TARGET_NAME TestStaticTopLibExt)
 # set the main cpp file
-set (TARGET_NAME TestCMakeTopLibExt)
 set (${TARGET_NAME}_main ${${PROJECT_NAME}_ROOT_DIR}/TestCMakeTopLib.cpp)
 
 # set sources. In this case we do not search recursively
-set (${TARGET_NAME}_cxx_sources Test_AboutTest.cpp Ext/Test_ExtSpecific.cpp)
+set (${TARGET_NAME}_cxx_sources 
+    Test_RunCommonFunctions.cpp
+    Test_RunExtVerFunctions.cpp
+)
 
 # add test target
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${${TARGET_NAME}_cxx_sources})
@@ -44,3 +50,7 @@ target_link_libraries(${TARGET_NAME}
         CMakeTopLib::CMakeTopLib-ext
 )
 
+# add target specific deps
+target_compile_definitions(${TARGET_NAME} PRIVATE
+    CMAKETOPLIB_EXT
+)

@@ -7,7 +7,7 @@
 
 #include <gmock/gmock.h>
 
-#include "dummy/Interfaces/DummyInterface.hpp"
+#include "dummy/GTest/Interfaces/DummyInterface.hpp"
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Weffc++"

@@ -1,0 +1,15 @@
+{
+	"default-registry": {
+		"kind": "git",
+		"repository": "git-matterfi@odroidH2:repos/VcpkgPortsMirror.git",
+		"baseline": "6635b69bd9682bdfdd49af6fdffc3e5966f76ed7"
+	},
+	"registries" : [
+		{
+			"kind": "git",
+			"repository": "git-matterfi@odroidH2:repos/VcpkgPortProject.git",
+			"baseline": "7d1266163daca847cbbdaedfc6155dfd9f18f96c",
+			"packages": [ "cmake-static-lib", "cmake-top-lib", "matterfi-cmake", "gtest" ]
+		}
+	]
+}

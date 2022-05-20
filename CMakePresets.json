@@ -19,7 +19,7 @@
                 "VCPKG_OVERLAY_TRIPLETS": "$env{VCPKG_TRIPLETS_DIR}",
                 "VCPKG_FEATURE_FLAGS": "registries,manifest",
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT_DIR}scripts/buildsystems/vcpkg.cmake",
-                "OPENTXS_BUILD_TESTS_DEFAULT":  "ON"
+                "OPENTXS_BUILD_TESTS_DEFAULT": "ON"
             },
             "warnings": {
                 "unusedCli": false
@@ -87,6 +87,17 @@
             }
         },
         {
+            "name": "msvc_x64_static_local",
+            "hidden": true,
+            "description": "Common settings for all all msvc x64 static presets using local repository",
+            "inherits": "msvc_x64_static",
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-msvc-static-local",
+                "MT_USE_LOCAL_REPOSITORY": "ON"
+            }
+        },
+
+        {
             "name": "msvc_x64_static_asan",
             "hidden": true,
             "description": "Common settings for all all msvc 64 static presets with address sanitizer",
@@ -94,6 +105,16 @@
             "cacheVariables": {
                 "VCPKG_TARGET_TRIPLET": "x64-msvc-static-asan",
                 "MSVC_ENABLE_ASAN": "ON"
+            }
+        },
+        {
+            "name": "msvc_x64_static_asan_local",
+            "hidden": true,
+            "description": "Common settings for all all msvc x64 static presets with address sanitizer using local repository",
+            "inherits": "msvc_x64_static_asan",
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-msvc-static-asan-local",
+                "MT_USE_LOCAL_REPOSITORY": "ON"
             }
         },
 
@@ -106,10 +127,22 @@
             "inherits": [ "msvc_x64_static", "common_debug" ]
         },
         {
+            "name": "msvc_x64_static_debug_local",
+            "displayName": "MSVC x64 static(debug local)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols, from local repository",
+            "inherits": [ "msvc_x64_static_local", "common_debug" ]
+        },
+        {
             "name": "msvc_x64_static_debug_asan",
             "displayName": "MSVC x64 static(debug with addr sanitizer)",
             "description": "Use msvc compiler, architecture x64, static linking, with debug symbols with address sanitizer",
             "inherits": [ "msvc_x64_static_asan", "common_debug" ]
+        },
+        {
+            "name": "msvc_x64_static_debug_asan_local",
+            "displayName": "MSVC x64 static(debug local with addr sanitizer)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols with address sanitizer, from local repository",
+            "inherits": [ "msvc_x64_static_asan_local", "common_debug" ]
         },
         {
             "name": "msvc_x64_static_release",

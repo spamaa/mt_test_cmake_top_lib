@@ -1,13 +1,13 @@
 {
 	"default-registry": {
 		"kind": "git",
-		"repository": "git-matterfi@odroidH2:repos/VcpkgPortsMirror.git",
+		"repository": "git@github.com:spamaa/vcpkg_registry_mirror.git",
 		"baseline": "6635b69bd9682bdfdd49af6fdffc3e5966f76ed7"
 	},
 	"registries" : [
 		{
 			"kind": "git",
-			"repository": "git-matterfi@odroidH2:repos/VcpkgPortProject.git",
+			"repository": "git@github.com:spamaa/matterfi_vcpkg_registry.git",
 			"baseline": "7a6348118afbef6460afa5e04352fea1266e3176",
 			"packages": [ "cmake-static-lib", "cmake-top-lib", "matterfi-cmake", "gtest" ]
 		}

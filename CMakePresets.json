@@ -170,9 +170,19 @@
             "configurePreset": "msvc_x64_static_debug"
         },
         {
+            "name": "msvc_x64_static_debug_local",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_debug_local"
+        },
+        {
             "name": "msvc_x64_static_debug_asan",
             "inherits": "common_buildPresets",
             "configurePreset": "msvc_x64_static_debug_asan"
+        },
+        {
+            "name": "msvc_x64_static_debug_asan_local",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_debug_asan_local"
         },
         {
             "name": "msvc_x64_static_release",

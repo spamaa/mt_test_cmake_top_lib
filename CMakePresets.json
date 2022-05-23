@@ -5,40 +5,204 @@
         "minor": 20,
         "patch": 0
     },
+
     "configurePresets": [
         {
-            "name": "CI",
+            "name": "common_configurePresets",
+            "hidden": true,
             "description": "common settings for all presets. Sets default instal & build paths, generator, configures vcpkg",
             "generator": "Ninja",
-            "binaryDir": "c:/work/repos/matterfi/TestCMakeTopLib/build/",
-            "installDir": "c:/work/repos/matterfi/TestCMakeTopLib/install/",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
             "cacheVariables": {
                 "VCPKG_OVERLAY_TRIPLETS": "$env{VCPKG_TRIPLETS_DIR}",
                 "VCPKG_FEATURE_FLAGS": "registries,manifest",
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT_DIR}scripts/buildsystems/vcpkg.cmake",
-                "OPENTXS_BUILD_TESTS_DEFAULT": "ON",
-                "CMAKE_BUILD_TYPE": "Release",
+                "OPENTXS_BUILD_TESTS_DEFAULT": "ON"
+            },
+            "warnings": {
+                "unusedCli": false
+            }
+
+        },
+        {
+            "name": "common_debug",
+            "hidden": true,
+            "description": "common settings for all debugs",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "common_release",
+            "hidden": true,
+            "description": "common settings for all releases",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+
+        {
+            "name": "msvc_base",
+            "hidden": true,
+            "description": "Common settings for all msvc presets",
+            "inherits": "common_configurePresets",
+            "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "MATTERFI_CMAKE_CONFIG_FILE": "share/matterfi-cmake/matterfi_config.cmake",
-                "MATTERFI_CMAKE_HOST_TRIPLET": "x64-windows",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "matterfi_cmake_modules",
+            "hidden": true,
+            "description": "common settings for configurations that will be using matterfi cmake modules in project cmakes",
+            "cacheVariables": {
+                "MATTERFI_CMAKE_CONFIG_FILE": "share/matterfi-cmake/matterfi_config.cmake"
+            }
+        },
+        {
+            "name": "matterfi_cmake_modules_x64_windows",
+            "hidden": true,
+            "description": "additional setting for projects using matterfi cmake modules for windows x64 targets",
+            "inherits": "matterfi_cmake_modules",
+            "cacheVariables": {
+                "MATTERFI_CMAKE_HOST_TRIPLET": "x64-windows"
+            }
+        },
+        {
+            "name": "msvc_x64_static",
+            "hidden": true,
+            "description": "Common settings for all all msvc x64 static presets",
+            "inherits": [
+                "msvc_base",
+                "matterfi_cmake_modules_x64_windows"
+            ],
+            "cacheVariables": {
                 "VCPKG_TARGET_TRIPLET": "x64-msvc-static"
             },
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
-            },
-            "warnings": {
-                "unusedCli": false
             }
+        },
+        {
+            "name": "msvc_x64_static_local",
+            "hidden": true,
+            "description": "Common settings for all all msvc x64 static presets using local repository",
+            "inherits": "msvc_x64_static",
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-msvc-static-local",
+                "MT_USE_LOCAL_REPOSITORY": "ON"
+            }
+        },
+
+        {
+            "name": "msvc_x64_static_asan",
+            "hidden": true,
+            "description": "Common settings for all all msvc 64 static presets with address sanitizer",
+            "inherits": "msvc_x64_static",
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-msvc-static-asan",
+                "MSVC_ENABLE_ASAN": "ON"
+            }
+        },
+        {
+            "name": "msvc_x64_static_asan_local",
+            "hidden": true,
+            "description": "Common settings for all all msvc x64 static presets with address sanitizer using local repository",
+            "inherits": "msvc_x64_static_asan",
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-msvc-static-asan-local",
+                "MT_USE_LOCAL_REPOSITORY": "ON"
+            }
+        },
+
+
+
+        {
+            "name": "msvc_x64_static_debug",
+            "displayName": "MSVC x64 static(debug)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols",
+            "inherits": [ "msvc_x64_static", "common_debug" ]
+        },
+        {
+            "name": "msvc_x64_static_debug_local",
+            "displayName": "MSVC x64 static(debug local)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols, from local repository",
+            "inherits": [ "msvc_x64_static_local", "common_debug" ]
+        },
+        {
+            "name": "msvc_x64_static_debug_asan",
+            "displayName": "MSVC x64 static(debug with addr sanitizer)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols with address sanitizer",
+            "inherits": [ "msvc_x64_static_asan", "common_debug" ]
+        },
+        {
+            "name": "msvc_x64_static_debug_asan_local",
+            "displayName": "MSVC x64 static(debug local with addr sanitizer)",
+            "description": "Use msvc compiler, architecture x64, static linking, with debug symbols with address sanitizer, from local repository",
+            "inherits": [ "msvc_x64_static_asan_local", "common_debug" ]
+        },
+        {
+            "name": "msvc_x64_static_release",
+            "displayName": "MSVC x64 static(release)",
+            "description": "Use msvc compiler, architecture x64, static linking, no debug symbols",
+            "inherits": [ "msvc_x64_static", "common_release" ]
+        },
+        {
+            "name": "msvc_x64_static_release_asan",
+            "displayName": "MSVC x64 static(release with addr sanitizer)",
+            "description": "Use msvc compiler, architecture x64, static linking, no debug symbols with address sanitizer",
+            "inherits": [ "msvc_x64_static_asan", "common_release" ]
         }
+
     ],
     "buildPresets": [
         {
-            "name": "CI",
+            "name": "common_buildPresets",
+            "hidden": true,
             "verbose": true,
-            "nativeToolOptions": [ "-k 0" ],
-            "configurePreset": "CI"
+            "nativeToolOptions": [ "-k 0" ]
+        },
+        {
+            "name": "msvc_x64_static_debug",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_debug"
+        },
+        {
+            "name": "msvc_x64_static_debug_asan",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_debug_asan"
+        },
+        {
+            "name": "msvc_x64_static_release",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_release"
+        },
+        {
+            "name": "msvc_x64_static_release_asan",
+            "inherits": "common_buildPresets",
+            "configurePreset": "msvc_x64_static_release_asan"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "common_testPrestets",
+            "description": "Common presets for all tests",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "test_msvc_x64_static_debug",
+            "displayName": "test for msvc x64 static debug",
+            "inherits": "common_testPrestets",
+            "configurePreset": "msvc_x64_static_debug"
         }
     ]
 }

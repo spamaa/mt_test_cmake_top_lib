@@ -1,8 +1,9 @@
 {
 "name": "test-cmake-top-lib",
 "version": "0.2.1",
-"dependencies": [
-	"cmake-top-lib",
-	"gtest"
-]
+	"dependencies": [
+		"cmake-top-lib",
+		"gtest",
+		"boost-uninstall"
+	]
 }

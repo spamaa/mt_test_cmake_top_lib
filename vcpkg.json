@@ -4,7 +4,8 @@
 	"dependencies": [
 		"cmake-top-lib",
 		"gtest",
-		"boost-vcpkg-helpers", 
-		"boost-config"
+		"boost-vcpkg-helpers",
+		"boost-config",
+		"boost-preprocessor"
 	]
 }

@@ -7,7 +7,7 @@
 #include <boost/config.hpp>
 
 namespace {
-    TEST(RunMethod, nothing)
+    TEST(RunMethod, fromBoostConfig)
     {
         // this module defines only some configuarion macros for boost lib cmopilation,
         // which may differ at diefferent platforms, hence I am testing just if include works

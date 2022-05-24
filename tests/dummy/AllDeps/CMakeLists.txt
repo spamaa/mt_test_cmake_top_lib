@@ -12,10 +12,18 @@ set (TARGET_NAME TestAllDeps)
 set (${TARGET_NAME}_main ${${PROJECT_NAME}_ROOT_DIR}/TestCMakeTopLib.cpp)
 
 # set sources. In this case we do not search recursively
-file (GLOB ${TARGET_NAME}_cxx_sources LIST_DIRECTORIES false "Test_*.cpp")
+#file (GLOB ${TARGET_NAME}_cxx_sources LIST_DIRECTORIES false "Test_*.cpp")
 
 # add test target
-matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${${TARGET_NAME}_cxx_sources})
+set (ALLDEPS_CXX_SOURCES)
+
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostConfig/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostPreprocessor/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+
+matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 
 # add required linking 
 target_link_libraries(${TARGET_NAME}

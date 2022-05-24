@@ -7,3 +7,5 @@
 add_subdirectory(GTest)
 add_subdirectory(StaticLib)
 add_subdirectory(TopLib)
+add_subdirectory(BoostConfig)
+add_subdirectory(AllDeps)

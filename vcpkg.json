@@ -4,6 +4,6 @@
 	"dependencies": [
 		"cmake-top-lib",
 		"gtest",
-		"boost-uninstall"
+		"boost-vcpkg-helpers"
 	]
 }

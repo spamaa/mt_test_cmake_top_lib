@@ -8,12 +8,13 @@
 		{
 			"kind": "git",
 			"repository": "git-matterfi@odroidH2:repos/VcpkgPortProject.git",
-			"baseline": "6fd03cd1b1eac74ae2c66b111f55904e3ee757a9",
+			"baseline": "d60fac8f0f6af77b1869bd1ae0c2879f4da3de39",
 			"packages": [
 				"cmake-static-lib",
 				"cmake-top-lib",
 				"matterfi-cmake",
 				"gtest",
+				"boost-vcpkg-helpers",
 				"boost-uninstall"
 
 			]

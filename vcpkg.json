@@ -6,6 +6,8 @@
 		"gtest",
 		"boost-vcpkg-helpers",
 		"boost-config",
-		"boost-preprocessor"
+		"boost-preprocessor",
+		"boost-detail",
+		"boost-assert"
 	]
 }

@@ -13,6 +13,7 @@
 		"boost-core",
 		"boost-type-traits",
 		"boost-throw-exception",
-		"boost-align"
+		"boost-align",
+		"boost-array"
 	]
 }

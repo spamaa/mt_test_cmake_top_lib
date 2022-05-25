@@ -11,6 +11,7 @@
 		"boost-assert",
 		"boost-static-assert",
 		"boost-core",
-		"boost-type-traits"
+		"boost-type-traits",
+		"boost-throw-exception"
 	]
 }

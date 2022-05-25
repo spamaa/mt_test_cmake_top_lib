@@ -9,6 +9,7 @@
 		"boost-preprocessor",
 		"boost-detail",
 		"boost-assert",
-		"boost-static-assert"
+		"boost-static-assert",
+		"boost-core"
 	]
 }

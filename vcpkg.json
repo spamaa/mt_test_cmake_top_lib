@@ -10,6 +10,7 @@
 		"boost-detail",
 		"boost-assert",
 		"boost-static-assert",
-		"boost-core"
+		"boost-core",
+		"boost-type-traits"
 	]
 }

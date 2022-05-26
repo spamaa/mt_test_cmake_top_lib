@@ -21,6 +21,7 @@
 		"boost-system",
 		"boost-integer",
 		"boost-move",
-		"boost-mpl"
+		"boost-mpl",
+		"boost-ratio"
 	]
 }

@@ -16,6 +16,7 @@
 		"boost-align",
 		"boost-array",
 		"boost-bind",
-		"boost-build"
+		"boost-build",
+		"boost-modular-build-helper"
 	]
 }

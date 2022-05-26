@@ -8,7 +8,7 @@
 		{
 			"kind": "git",
 			"repository": "git-matterfi@odroidH2:repos/VcpkgPortProject.git",
-			"baseline": "0f1b4d0ddd0cfbe4805c722d30382efbd52645ac",
+			"baseline": "3bd74ef4f90518c634d5cc1f370b6df85214a6ea",
 			"packages": [
 				"cmake-static-lib",
 				"cmake-top-lib",
@@ -35,7 +35,8 @@
 				"boost-integer",
 				"boost-move",
 				"boost-mpl",
-				"boost-ratio"
+				"boost-ratio",
+				"boost-detail"
 			]
 		}
 	]

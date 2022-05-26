@@ -4,12 +4,12 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 #include <gtest/gtest.h>
-// #include <boost/blank.hpp>
+ #include <boost/blank.hpp>
 
 namespace {
     TEST(RunMethod, fromBoostDetail)
     {
-        /*
+        
         // run some sample code from boost documentation
         boost::blank b1, b2;
         EXPECT_TRUE(b1 == b2);
@@ -18,8 +18,5 @@ namespace {
         EXPECT_TRUE(!(b1 != b2));
         EXPECT_TRUE(!(b1 < b2));
         EXPECT_TRUE(!(b1 > b2));
-        */
-        // TODO
-        EXPECT_TRUE(false);
     }
 }

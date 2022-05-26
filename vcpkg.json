@@ -23,6 +23,7 @@
 		"boost-move",
 		"boost-mpl",
 		"boost-ratio",
-		"boost-detail"
+		"boost-detail",
+		"boost-container-hash"
 	]
 }

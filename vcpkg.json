@@ -26,6 +26,8 @@
 		"boost-detail",
 		"boost-container-hash",
 		"boost-io",
-		"boost-utility"
+		"boost-utility",
+		"boost-chrono",
+		"boost-typeof"
 	]
 }

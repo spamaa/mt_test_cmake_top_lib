@@ -16,6 +16,7 @@
 		"boost-bind",
 		"boost-build",
 		"boost-modular-build-helper",
-		"boost-predef"
+		"boost-predef",
+		"boost-winapi"
 	]
 }

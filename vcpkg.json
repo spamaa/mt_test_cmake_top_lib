@@ -4,8 +4,6 @@
 	"dependencies": [
 		"cmake-top-lib",
 		"gtest",
-		"boost-vcpkg-helpers",
-		"boost-config",
 		"boost-preprocessor",
 		"boost-detail",
 		"boost-assert",
@@ -17,6 +15,7 @@
 		"boost-array",
 		"boost-bind",
 		"boost-build",
-		"boost-modular-build-helper"
+		"boost-modular-build-helper",
+		"boost-predef"
 	]
 }

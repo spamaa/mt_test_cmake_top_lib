@@ -25,6 +25,7 @@
 		"boost-ratio",
 		"boost-detail",
 		"boost-container-hash",
-		"boost-io"
+		"boost-io",
+		"boost-utility"
 	]
 }

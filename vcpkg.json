@@ -18,6 +18,7 @@
 		"boost-modular-build-helper",
 		"boost-predef",
 		"boost-winapi",
-		"boost-system"
+		"boost-system",
+		"boost-integer"
 	]
 }

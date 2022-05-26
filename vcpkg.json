@@ -15,6 +15,7 @@
 		"boost-throw-exception",
 		"boost-align",
 		"boost-array",
-		"boost-bind"
+		"boost-bind",
+		"boost-build"
 	]
 }

@@ -6,6 +6,7 @@
 #find required deps
 find_package(Boost REQUIRED COMPONENTS
     system
+    chrono
 )
 
 # set executable name
@@ -84,6 +85,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-typeof
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostTypeOf/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-chrono
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostChrono/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 
@@ -92,4 +96,5 @@ target_link_libraries(${TARGET_NAME}
     PRIVATE
         Boost::boost
         Boost::system
+        Boost::chrono
 )

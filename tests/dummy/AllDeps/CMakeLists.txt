@@ -4,7 +4,9 @@
 ############################################################################
 
 #find required deps
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED COMPONENTS
+    system
+)
 
 # set executable name
 set (TARGET_NAME TestAllDeps)
@@ -52,6 +54,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-winapi
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostWinapi/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-system
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostSystem/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
@@ -60,4 +65,5 @@ matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 target_link_libraries(${TARGET_NAME}
     PRIVATE
         Boost::boost
+        Boost::system
 )

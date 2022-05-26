@@ -19,6 +19,7 @@
 		"boost-predef",
 		"boost-winapi",
 		"boost-system",
-		"boost-integer"
+		"boost-integer",
+		"boost-move"
 	]
 }

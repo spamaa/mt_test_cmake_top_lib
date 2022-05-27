@@ -1,0 +1,1 @@
+file (GLOB ${TARGET_NAME}_cxx_sources LIST_DIRECTORIES false "${CMAKE_CURRENT_LIST_DIR}/Test_*.cpp")

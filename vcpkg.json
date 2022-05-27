@@ -37,6 +37,7 @@
 		"boost-function",
 		"boost-conversion",
 		"boost-function-types",
-		"boost-fusion"
+		"boost-fusion",
+		"boost-optional"
 	]
 }

@@ -38,6 +38,7 @@
 		"boost-conversion",
 		"boost-function-types",
 		"boost-fusion",
-		"boost-optional"
+		"boost-optional",
+		"boost-iterator"
 	]
 }

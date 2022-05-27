@@ -7,6 +7,7 @@
 find_package(Boost REQUIRED COMPONENTS
     system
     chrono
+    exception
 )
 
 # set executable name
@@ -94,6 +95,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-tuple
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostTuple/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-exception
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostException/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 
@@ -103,4 +107,5 @@ target_link_libraries(${TARGET_NAME}
         Boost::boost
         Boost::system
         Boost::chrono
+        Boost::exception
 )

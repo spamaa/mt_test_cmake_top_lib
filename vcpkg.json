@@ -30,6 +30,7 @@
 		"boost-chrono",
 		"boost-typeof",
 		"boost-smart-ptr",
-		"boost-tuple"
+		"boost-tuple",
+		"boost-exception"
 	]
 }

@@ -28,6 +28,7 @@
 		"boost-io",
 		"boost-utility",
 		"boost-chrono",
-		"boost-typeof"
+		"boost-typeof",
+		"boost-smart-ptr"
 	]
 }

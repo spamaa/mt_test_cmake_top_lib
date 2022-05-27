@@ -88,6 +88,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-chrono
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostChrono/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-shared-ptr
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostSharedPtr/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 

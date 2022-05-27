@@ -33,6 +33,7 @@
 		"boost-tuple",
 		"boost-exception",
 		"boost-concept-check",
-		"boost-type-index"
+		"boost-type-index",
+		"boost-function"
 	]
 }

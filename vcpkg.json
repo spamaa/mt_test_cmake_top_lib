@@ -29,6 +29,7 @@
 		"boost-utility",
 		"boost-chrono",
 		"boost-typeof",
-		"boost-smart-ptr"
+		"boost-smart-ptr",
+		"boost-tuple"
 	]
 }

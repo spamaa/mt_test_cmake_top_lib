@@ -101,6 +101,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-concept-check
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostConceptCheck/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-type-index
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostTypeIndex/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 

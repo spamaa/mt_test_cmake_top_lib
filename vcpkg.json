@@ -32,6 +32,7 @@
 		"boost-smart-ptr",
 		"boost-tuple",
 		"boost-exception",
-		"boost-concept-check"
+		"boost-concept-check",
+		"boost-type-index"
 	]
 }

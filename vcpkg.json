@@ -42,6 +42,7 @@
 		"boost-iterator",
 		"boost-regex",
 		"boost-numeric-conversion",
-		"boost-range"
+		"boost-range",
+		"boost-intrusive"
 	]
 }

@@ -40,6 +40,7 @@
 		"boost-fusion",
 		"boost-optional",
 		"boost-iterator",
-		"boost-regex"
+		"boost-regex",
+		"boost-numeric-conversion"
 	]
 }

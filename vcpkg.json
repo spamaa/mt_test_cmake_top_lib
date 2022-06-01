@@ -39,6 +39,7 @@
 		"boost-function-types",
 		"boost-fusion",
 		"boost-optional",
-		"boost-iterator"
+		"boost-iterator",
+		"boost-regex"
 	]
 }

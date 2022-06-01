@@ -8,6 +8,7 @@ find_package(Boost REQUIRED COMPONENTS
     system
     chrono
     exception
+    regex
 )
 
 # set executable name
@@ -122,6 +123,9 @@ list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 #add dummy tests from boost-iterator
 include ("${CMAKE_CURRENT_LIST_DIR}/../BoostIterator/cxx_sources.cmake")
 list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
+#add dummy tests from boost-regex
+include ("${CMAKE_CURRENT_LIST_DIR}/../BoostRegex/cxx_sources.cmake")
+list (APPEND ALLDEPS_CXX_SOURCES ${${TARGET_NAME}_cxx_sources})
 
 matterfi_add_test_target(${PROJECT_NAME} ${TARGET_NAME} ${ALLDEPS_CXX_SOURCES})
 
@@ -132,4 +136,5 @@ target_link_libraries(${TARGET_NAME}
         Boost::system
         Boost::chrono
         Boost::exception
+        Boost::regex
 )

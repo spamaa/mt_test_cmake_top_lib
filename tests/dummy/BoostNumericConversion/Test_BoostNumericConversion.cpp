@@ -15,20 +15,12 @@ namespace {
         typedef boost::numeric::converter<int, double> Double2Int;
 
         int x = Double2Int::convert(2.0);
-//        assert(x == 2);
+        EXPECT_EQ(x, 2);
 
         int y = Double2Int()(3.14); // As a function object.
-//        assert(y == 3); // The default rounding is trunc.
+        EXPECT_EQ(y, 3);
 
-        try
-        {
-            double m = boost::numeric::bounds<double>::highest();
-//            int z = Double2Int::convert(m); // By default throws positive_overflow()
-        }
-        catch (boost::numeric::positive_overflow const&)
-        {
-            ASSERT_TRUE(false);
-            // should not be here
-        }
+        double m = boost::numeric::bounds<double>::highest();
+        EXPECT_THROW(Double2Int::convert(m), ::boost::numeric::positive_overflow);
     }
 }
